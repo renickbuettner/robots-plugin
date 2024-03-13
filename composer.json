@@ -1,0 +1,13 @@
+{
+    "name": "renick/robots-plugin",
+    "type": "october-plugin",
+    "description": "OctoberCMS plugin for managing a robots.txt.",
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

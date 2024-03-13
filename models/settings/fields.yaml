@@ -1,0 +1,52 @@
+design:
+    horizontalMode: true
+
+tabs:
+    fields:
+        site_mode:
+            label: renick.robots::lang.settings.site_mode.label
+            commentAbove: renick.robots::lang.settings.site_mode.comment
+            span: left
+            tab: renick.robots::lang.settings.tab_general
+            type: balloon-selector
+            default: allow_all
+            options:
+                deny_all: renick.robots::lang.settings.site_mode.deny_all
+                allow_all: renick.robots::lang.settings.site_mode.allow_all
+                custom: renick.robots::lang.settings.site_mode.custom
+
+        custom_content:
+            label: renick.robots::lang.settings.custom_content.label
+            commentAbove: renick.robots::lang.settings.custom_content.comment
+            span: full
+            tab: renick.robots::lang.settings.tab_general
+            type: codeeditor
+            size: giant
+            language: plain
+            defaultFrom: default_custom_content
+            trigger:
+                action: show
+                field: site_mode
+                condition: value[custom]
+
+        disallow_page:
+            label: renick.robots::lang.settings.disallow_page.label
+            commentAbove: renick.robots::lang.settings.disallow_page.comment
+            span: left
+            tab: renick.robots::lang.settings.tab_general
+            type: pagefinder
+            singleMode: true
+            trigger:
+                action: show
+                field: site_mode
+                condition: value[custom]
+
+        _hint_custom_content:
+            tab: renick.robots::lang.settings.tab_general
+            type: partial
+            span: full
+            path: $/renick/robots/models/settings/_custom_content_hint.php
+            trigger:
+                action: show
+                field: site_mode
+                condition: value[custom]
