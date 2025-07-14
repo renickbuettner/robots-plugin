@@ -29,13 +29,11 @@ class Plugin extends PluginBase
 
     public function register(): void
     {
-        parent::register();
     }
 
 
     public function boot(): void
     {
-        parent::boot();
     }
 
     public function registerSettings(): array
